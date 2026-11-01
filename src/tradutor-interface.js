@@ -23,10 +23,13 @@
     let traducao = Object.prototype.hasOwnProperty.call(DICIONARIO, limpo) ? DICIONARIO[limpo] : null;
     if (traducao === null) {
       for (const [regex, substituto] of PADROES) {
-        if (regex.test(limpo)) {
-          traducao = limpo.replace(regex, substituto);
-          break;
-        }
+        const grupos = limpo.match(regex);
+        if (!grupos) continue;
+        // $1 insere o trecho capturado como está; [[$1]] insere o trecho traduzido pelo dicionário.
+        traducao = substituto
+          .replace(/\[\[\$(\d)\]\]/g, (_, n) => (DICIONARIO[grupos[n]] !== undefined ? DICIONARIO[grupos[n]] : grupos[n]))
+          .replace(/\$(\d)/g, (_, n) => grupos[n]);
+        break;
       }
     }
     if (traducao === null || traducao === limpo) return null;

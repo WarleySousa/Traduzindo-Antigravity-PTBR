@@ -53,6 +53,10 @@ node ferramentas/levantar-textos.cjs saida/main.js saida/textos-en.json
 
 O segundo comando gera a lista de textos em inglês da interface. Compare com o dicionário em `traducao/textos/` e traduza os textos novos em um novo arquivo dessa pasta.
 
+Para conferir o resultado no aplicativo, abra o Antigravity com `--remote-debugging-port=9333` e rode `node ferramentas/inspecionar-janela.cjs`: ele lista os textos visíveis na janela e aponta os que continuam em inglês.
+
+As descrições de plugins do Marketplace vêm do servidor e mudam com frequência, por isso ficam em inglês.
+
 ## Licença
 
 [MIT](LICENSE) © 2026 Warley Lourenço de Sousa.
