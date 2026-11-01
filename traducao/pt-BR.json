@@ -1,0 +1,60 @@
+{
+  "padroes": [
+    ["^(\\d+) agents? running$", "$1 agente(s) em execução"],
+    ["^(\\d+) files? changed$", "$1 arquivo(s) alterado(s)"],
+    ["^(\\d+) files?$", "$1 arquivo(s)"],
+    ["^(\\d+) conversations?$", "$1 conversa(s)"],
+    ["^(\\d+) messages?$", "$1 mensagem(ns)"],
+    ["^(\\d+) results?$", "$1 resultado(s)"],
+    ["^(\\d+) steps?$", "$1 etapa(s)"],
+    ["^(\\d+) more$", "mais $1"],
+    ["^\\+(\\d+) more$", "+$1 mais"],
+    ["^(\\d+)s ago$", "há $1 s"],
+    ["^(\\d+)m ago$", "há $1 min"],
+    ["^(\\d+)h ago$", "há $1 h"],
+    ["^(\\d+)d ago$", "há $1 d"],
+    ["^(\\d+) seconds? ago$", "há $1 segundo(s)"],
+    ["^(\\d+) minutes? ago$", "há $1 minuto(s)"],
+    ["^(\\d+) hours? ago$", "há $1 hora(s)"],
+    ["^(\\d+) days? ago$", "há $1 dia(s)"],
+    ["^Worked for (.+)$", "Trabalhou por $1"],
+    ["^Thought for (.+)$", "Pensou por $1"],
+    ["^Updated (.+)$", "Atualizado $1"]
+  ],
+  "processoPrincipal": {
+    "dist/main.js": [
+      ["title: 'WSL distro not found'", "title: 'Distribuição WSL não encontrada'"],
+      ["`The WSL distro \"${WSL_DISTRO}\" is no longer installed.`", "`A distribuição WSL \"${WSL_DISTRO}\" não está mais instalada.`"],
+      ["'Antigravity opened on Windows instead.'", "'O Antigravity foi aberto no Windows.'"],
+      ["label: 'New Window'", "label: 'Nova janela'"],
+      ["label: 'No agents running'", "label: 'Nenhum agente em execução'"],
+      ["label: `Open ${electron_1.app.getName()}`", "label: `Abrir ${electron_1.app.getName()}`"],
+      ["label: 'Quit'", "label: 'Sair'"],
+      ["buttons: ['Cancel', 'Quit']", "buttons: ['Cancelar', 'Sair']"],
+      ["title: 'Confirm Quit'", "title: 'Confirmar saída'"],
+      ["'Are you sure you want to quit?'", "'Tem certeza de que deseja sair?'"],
+      ["'There may be agents or background tasks running.'", "'Pode haver agentes ou tarefas em segundo plano em execução.'"]
+    ],
+    "dist/menu.js": [
+      ["label: 'New Window'", "label: 'Nova janela'"],
+      ["label: 'Docs'", "label: 'Documentação'"],
+      ["label: 'Connect to WSL'", "label: 'Conectar ao WSL'"],
+      ["label: 'Reopen Locally'", "label: 'Reabrir localmente'"]
+    ],
+    "dist/tray.js": [
+      ["(count > 0 ? `${count}` : 'No') +\n                    ' agent' +\n                    (count === 1 ? '' : 's') +\n                    ' running'", "(count > 0 ? `${count} agente${count === 1 ? '' : 's'} em execução` : 'Nenhum agente em execução')"]
+    ],
+    "dist/ipcHandlers.js": [
+      ["'Cannot open folder'", "'Não foi possível abrir a pasta'"],
+      ["'Folder is on the Windows filesystem'", "'A pasta está no sistema de arquivos do Windows'"],
+      ["title: 'Open workspace'", "title: 'Abrir espaço de trabalho'"],
+      ["title: 'Open workspaces'", "title: 'Abrir espaços de trabalho'"]
+    ],
+    "dist/updater.js": [
+      ["message: 'No updates available'", "message: 'Nenhuma atualização disponível'"]
+    ],
+    "dist/provisionSplash.js": [
+      ["<div>Setting up WSL: ${escapeHtml(distro)}</div>", "<div>Configurando o WSL: ${escapeHtml(distro)}</div>"]
+    ]
+  }
+}

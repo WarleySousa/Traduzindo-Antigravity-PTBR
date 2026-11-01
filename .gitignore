@@ -1,0 +1,5 @@
+node_modules/
+*.asar
+*.asar.tmp
+*.ptbr
+*.log
